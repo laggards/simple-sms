@@ -45,7 +45,7 @@ Please read the Laravel 4 [documentation.](https://github.com/SimpleSoftwareIO/s
 First, add the Simple SMS package to your `require` in your `composer/json` file:
 
     "require": {
-        "simplesoftwareio/simple-sms": "~2"
+        "laggards/simple-sms": "~2"
     }
 
 Next, run the `composer update` command.  This will install the package into your Laravel application.
@@ -54,13 +54,13 @@ Next, run the `composer update` command.  This will install the package into you
 
 Once you have added the package to your composer file, you will need to register the service provider with Laravel.
 
-Add `SimpleSoftwareIO\SMS\SMSServiceProvider::class` in your `config/app.php` configuration file within the `providers` array.
+Add `Laggards\SMS\SMSServiceProvider::class` in your `config/app.php` configuration file within the `providers` array.
 
 #### Aliases
 
 Finally, register the Facade.
 
-Add `'SMS' => SimpleSoftwareIO\SMS\Facades\SMS::class` in your `config/app.php` configuration file within the `aliases` array.
+Add `'SMS' => Laggards\SMS\Facades\SMS::class` in your `config/app.php` configuration file within the `aliases` array.
 
 #### API Settings
 
@@ -311,7 +311,7 @@ The `pretend` method will simply create a log file that states that a SMS messag
 
 You may also set the `pretend` configuration option to true to have all SMS messages pretend that they were sent.
 
-    `/app/config/simplesoftwareio/simple-sms/config.php`
+    `/app/config/Laggards/simple-sms/config.php`
     return array(
         'pretend' => true,
     );
