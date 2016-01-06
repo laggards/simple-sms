@@ -1,1 +1,1 @@
-This is a test message sent with Simple-SMS.
+This is a test message sent with Laggards/Simple-SMS.

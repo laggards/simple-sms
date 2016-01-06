@@ -18,6 +18,7 @@ use SimpleSoftwareIO\SMS\Drivers\LabsMobileSMS;
 use SimpleSoftwareIO\SMS\Drivers\MozeoSMS;
 use SimpleSoftwareIO\SMS\Drivers\NexmoSMS;
 use SimpleSoftwareIO\SMS\Drivers\TwilioSMS;
+use SimpleSoftwareIO\SMS\Drivers\DxwSMS;
 
 class DriverManager extends Manager
 {
@@ -163,5 +164,25 @@ class DriverManager extends Manager
             $this->app['request']->url(),
             $config['verify']
         );
+    }
+	/**
+     * Create an instance of the callfire driver
+     *
+     * @return DxwSMS
+     */
+    protected function createDxwDriver()
+    {
+        $config = $this->app['config']->get('sms.dxwang', []);
+
+        $provider = new DxwSMS(new Client);
+
+        $auth = [
+            'name' => $config['name'],
+            'pwd' => $config['pwd'],
+            'sign' => $config['sign'],
+        ];
+        $provider->buildBody($auth);
+
+        return $provider;
     }
 }

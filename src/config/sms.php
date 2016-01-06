@@ -90,5 +90,10 @@ return [
         'account_sid' => 'Your SID',
         'auth_token' => 'Your Token',
         'verify' => true,
+    ],
+    'dxwang' => [
+        'name' => 'Your Client ID',
+        'pwd' => 'Access Token',
+        'sign' => 'user sign',
     ]
 ];
