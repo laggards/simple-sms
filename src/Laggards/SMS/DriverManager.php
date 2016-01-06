@@ -170,7 +170,7 @@ class DriverManager extends Manager
      *
      * @return DxwSMS
      */
-    protected function createDxwDriver()
+    protected function createDxwangDriver()
     {
         $config = $this->app['config']->get('sms.dxwang', []);
 
@@ -182,7 +182,6 @@ class DriverManager extends Manager
             'sign' => $config['sign'],
         ];
         $provider->buildBody($auth);
-
         return $provider;
     }
 }

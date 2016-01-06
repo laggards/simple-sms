@@ -27,7 +27,7 @@ class DxwSMS extends AbstractSMS implements DriverInterface
      *
      * @var string
      */
-    protected $apiBase = 'http://web.duanxinwang.cc/asmx/smsservice.aspx?';
+    protected $apiBase = 'http://web.duanxinwang.cc/asmx/smsservice.aspx';
 
     /**
      * Constructs the MozeoSMS Instance.
@@ -48,19 +48,17 @@ class DxwSMS extends AbstractSMS implements DriverInterface
     public function send(OutgoingMessage $message)
     {
         $composeMessage = $message->composeMessage();
-
         foreach ($message->getTo() as $to) {
             $data = [
                 'mobile' => $to,
-                'content' => $composeMessage,
+                'content' => urlencode($composeMessage),
 				'stime'=>'',   //可选参数。发送时间，填写时已填写的时间发送，不填时为当前时间发送
 				'type'=>'pt',	//必填参数。固定值 pt
 				'extno'=>'' 	//可选参数，扩展码，用户定义扩展码，只能为数字
             ];
-
             $this->buildBody($data);
 
-            $this->postRequest();
+			$this->getRequest();
         }
     }
 
