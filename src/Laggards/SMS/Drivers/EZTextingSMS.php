@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS\Drivers;
+<?php namespace Laggards\SMS\Drivers;
 
 /**
  * Simple-SMS
@@ -9,8 +9,8 @@
  *
  */
 
-use SimpleSoftwareIO\SMS\IncomingMessage;
-use SimpleSoftwareIO\SMS\OutgoingMessage;
+use Laggards\SMS\IncomingMessage;
+use Laggards\SMS\OutgoingMessage;
 use GuzzleHttp\Client;
 
 class EZTextingSMS extends AbstractSMS implements DriverInterface
@@ -49,7 +49,7 @@ class EZTextingSMS extends AbstractSMS implements DriverInterface
     /**
      * Sends a SMS message.
      *
-     * @param \SimpleSoftwareIO\SMS\OutgoingMessage $message
+     * @param \Laggards\SMS\OutgoingMessage $message
      * @return void
      */
     public function send(OutgoingMessage $message)
@@ -86,7 +86,7 @@ class EZTextingSMS extends AbstractSMS implements DriverInterface
      * Gets a single message by it's ID.
      *
      * @param string|int $messageId
-     * @return \SimpleSoftwareIO\SMS\IncomingMessage
+     * @return \Laggards\SMS\IncomingMessage
      */
     public function getMessage($messageId)
     {
@@ -102,7 +102,7 @@ class EZTextingSMS extends AbstractSMS implements DriverInterface
      * Returns an IncomingMessage object with it's properties filled out.
      *
      * @param $rawMessage
-     * @return mixed|\SimpleSoftwareIO\SMS\IncomingMessage
+     * @return mixed|\Laggards\SMS\IncomingMessage
      */
     protected function processReceive($rawMessage)
     {
@@ -120,7 +120,7 @@ class EZTextingSMS extends AbstractSMS implements DriverInterface
      * Receives an incoming message via REST call.
      *
      * @param mixed $raw
-     * @return \SimpleSoftwareIO\SMS\IncomingMessage
+     * @return \Laggards\SMS\IncomingMessage
      */
     public function receive($raw)
     {

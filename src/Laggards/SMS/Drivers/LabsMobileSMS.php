@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS\Drivers;
+<?php namespace Laggards\SMS\Drivers;
 
 /**
  * Simple-SMS
@@ -9,8 +9,8 @@
  *
  */
 
-use SimpleSoftwareIO\SMS\IncomingMessage;
-use SimpleSoftwareIO\SMS\OutgoingMessage;
+use Laggards\SMS\IncomingMessage;
+use Laggards\SMS\OutgoingMessage;
 use GuzzleHttp\Client;
 
 class LabsMobileSMS extends AbstractSMS implements DriverInterface

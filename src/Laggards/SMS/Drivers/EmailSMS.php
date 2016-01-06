@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS\Drivers;
+<?php namespace Laggards\SMS\Drivers;
 
 /**
  * Simple-SMS
@@ -9,7 +9,7 @@
  *
  */
 
-use SimpleSoftwareIO\SMS\OutgoingMessage;
+use Laggards\SMS\OutgoingMessage;
 use Illuminate\Mail\Mailer;
 
 class EmailSMS implements DriverInterface
@@ -17,7 +17,7 @@ class EmailSMS implements DriverInterface
     /**
      * The Message Instance
      *
-     * @var \SimpleSoftwareIO\SMS\OutgoingMessage
+     * @var \Laggards\SMS\OutgoingMessage
      */
     protected $outgoingMessage;
 
@@ -35,7 +35,7 @@ class EmailSMS implements DriverInterface
     /**
      * Sends a SMS message.
      *
-     * @param \SimpleSoftwareIO\SMS\OutgoingMessage $message
+     * @param \Laggards\SMS\OutgoingMessage $message
      * @return void
      */
     public function send(OutgoingMessage $message)
@@ -200,7 +200,7 @@ class EmailSMS implements DriverInterface
      * Gets a single message by it's ID.
      *
      * @param string|int $messageId
-     * @return \SimpleSoftwareIO\SMS\IncomingMessage
+     * @return \Laggards\SMS\IncomingMessage
      * @throws \RuntimeException
      */
     public function getMessage($messageId)
@@ -212,7 +212,7 @@ class EmailSMS implements DriverInterface
      * Receives an incoming message via REST call.
      *
      * @param mixed $raw
-     * @return \SimpleSoftwareIO\SMS\IncomingMessage
+     * @return \Laggards\SMS\IncomingMessage
      * @throws \RuntimeException
      */
     public function receive($raw)

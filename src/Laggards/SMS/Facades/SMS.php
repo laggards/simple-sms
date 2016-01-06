@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS\Facades;
+<?php namespace Laggards\SMS\Facades;
 
 /**
  * Simple-SMS

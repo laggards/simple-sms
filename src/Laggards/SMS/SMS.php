@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS;
+<?php namespace Laggards\SMS;
 
 /**
  * Simple-SMS
@@ -18,14 +18,14 @@ use SuperClosure\Serializer;
 use Illuminate\Support\Serial;
 use Illuminate\Queue\QueueManager;
 use Illuminate\Container\Container;
-use SimpleSoftwareIO\SMS\Drivers\DriverInterface;
+use Laggards\SMS\Drivers\DriverInterface;
 
 class SMS
 {
     /**
      * The Driver Interface instance.
      *
-     * @var \SimpleSoftwareIO\SMS\Drivers\DriverInterface
+     * @var \Laggards\SMS\Drivers\DriverInterface
      */
     protected $driver;
 
@@ -130,7 +130,7 @@ class SMS
     /**
      * Creates a new Message instance.
      *
-     * @return \SimpleSoftwareIO\SMS\Message
+     * @return \Laggards\SMS\Message
      */
     protected function createOutgoingMessage()
     {

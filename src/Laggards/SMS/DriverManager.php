@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS;
+<?php namespace Laggards\SMS;
 
 /**
  * Simple-SMS
@@ -11,14 +11,14 @@
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Manager;
-use SimpleSoftwareIO\SMS\Drivers\CallFireSMS;
-use SimpleSoftwareIO\SMS\Drivers\EmailSMS;
-use SimpleSoftwareIO\SMS\Drivers\EZTextingSMS;
-use SimpleSoftwareIO\SMS\Drivers\LabsMobileSMS;
-use SimpleSoftwareIO\SMS\Drivers\MozeoSMS;
-use SimpleSoftwareIO\SMS\Drivers\NexmoSMS;
-use SimpleSoftwareIO\SMS\Drivers\TwilioSMS;
-use SimpleSoftwareIO\SMS\Drivers\DxwSMS;
+use Laggards\SMS\Drivers\CallFireSMS;
+use Laggards\SMS\Drivers\EmailSMS;
+use Laggards\SMS\Drivers\EZTextingSMS;
+use Laggards\SMS\Drivers\LabsMobileSMS;
+use Laggards\SMS\Drivers\MozeoSMS;
+use Laggards\SMS\Drivers\NexmoSMS;
+use Laggards\SMS\Drivers\TwilioSMS;
+use Laggards\SMS\Drivers\DxwSMS;
 
 class DriverManager extends Manager
 {

@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS;
+<?php namespace Laggards\SMS;
 
 /**
  * Simple-SMS

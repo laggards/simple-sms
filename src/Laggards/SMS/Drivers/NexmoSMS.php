@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS\Drivers;
+<?php namespace Laggards\SMS\Drivers;
 
 /**
  * Simple-SMS
@@ -9,7 +9,7 @@
  *
  */
 
-use SimpleSoftwareIO\SMS\OutgoingMessage;
+use Laggards\SMS\OutgoingMessage;
 use GuzzleHttp\Client;
 
 class NexmoSMS extends AbstractSMS implements DriverInterface
@@ -46,7 +46,7 @@ class NexmoSMS extends AbstractSMS implements DriverInterface
     /**
      * Sends a SMS message.
      *
-     * @param \SimpleSoftwareIO\SMS\OutgoingMessage $message
+     * @param \Laggards\SMS\OutgoingMessage $message
      * @return void
      */
     public function send(OutgoingMessage $message)
@@ -110,7 +110,7 @@ class NexmoSMS extends AbstractSMS implements DriverInterface
      * Gets a single message by it's ID.
      *
      * @param string|int $messageId
-     * @return \SimpleSoftwareIO\SMS\IncomingMessage
+     * @return \Laggards\SMS\IncomingMessage
      */
     public function getMessage($messageId)
     {
@@ -123,7 +123,7 @@ class NexmoSMS extends AbstractSMS implements DriverInterface
      * Receives an incoming message via REST call.
      *
      * @param mixed $raw
-     * @return \SimpleSoftwareIO\SMS\IncomingMessage
+     * @return \Laggards\SMS\IncomingMessage
      */
     public function receive($raw)
     {

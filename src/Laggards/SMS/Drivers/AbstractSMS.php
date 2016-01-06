@@ -1,4 +1,4 @@
-<?php namespace SimpleSoftwareIO\SMS\Drivers;
+<?php namespace Laggards\SMS\Drivers;
 
 /**
  * Simple-SMS
@@ -9,7 +9,7 @@
  *
  */
 
-use SimpleSoftwareIO\SMS\IncomingMessage;
+use Laggards\SMS\IncomingMessage;
 
 abstract class AbstractSMS
 {
