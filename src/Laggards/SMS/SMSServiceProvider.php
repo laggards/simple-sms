@@ -8,8 +8,10 @@
  * @author SimpleSoftware support@simplesoftware.io
  *
  */
-
+use Illuminate\Contracts\Container\Container as Application;
+use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Lumen\Application as LumenApplication;
 
 class SMSServiceProvider extends ServiceProvider
 {
@@ -28,11 +30,25 @@ class SMSServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../../config/sms.php' => config_path('sms.php'),
-        ]);
+		$this->setupConfig($this->app);
     }
-
+	/**
+     * Setup the config.
+     *
+     * @param \Illuminate\Contracts\Container\Container $app
+     *
+     * @return void
+     */
+    protected function setupConfig(Application $app)
+    {
+		if ($app instanceof LaravelApplication && $app->runningInConsole()) {
+            $this->publishes([
+				__DIR__.'/../../config/sms.php' => config_path('sms.php'),
+			]);
+        } elseif ($app instanceof LumenApplication) {
+            $app->configure('sms');
+        }
+	}
     /**
      * Register the service provider.
      *
